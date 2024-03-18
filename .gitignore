@@ -1,0 +1,9 @@
+node_modules
+*.terraform/
+*.plan
+*.zip
+terraform.tfstate*
+.terraform.lock.hcl
+dist/
+builds/
+.external_modules/

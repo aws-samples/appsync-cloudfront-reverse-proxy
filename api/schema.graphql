@@ -1,0 +1,24 @@
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
+
+type Query {
+  ping: String!
+}
+
+type User {
+	id: ID
+	name: String
+}
+
+type Subscription {
+	newUser: User
+	@aws_subscribe(mutations: ["newUser"])
+}
+
+type Mutation {
+	newUser(userId: ID!, name: String!): User!
+}
+

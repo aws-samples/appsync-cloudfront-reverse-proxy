@@ -1,0 +1,9 @@
+compact: true
+quiet: true
+framework: all
+skip-check:
+  - CKV_AWS_50  # X-ray tracing is enabled for Lambda
+  - CKV_AWS_117 # Ensure AWS Lambda function is configured inside a VPC
+  - CKV_AWS_144 # Ensure S3 bucket has cross-region replication enabled
+  - CKV_AWS_186 # Ensure S3 bucket Object is encrypted by KMS using a customer managed Key (CMK)
+  - CKV_AWS_272 # TODO maybe consider adding it back? Ensure AWS Lambda function is configured to validate code-signing

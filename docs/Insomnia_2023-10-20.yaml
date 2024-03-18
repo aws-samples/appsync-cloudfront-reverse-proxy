@@ -1,0 +1,185 @@
+_type: export
+__export_format: 4
+__export_date: 2023-10-20T11:22:47.438Z
+__export_source: insomnia.desktop.app:v8.3.0
+resources:
+  - _id: req_17dfd0126a4948dfb7fb07f7419f5dd4
+    parentId: wrk_scratchpad
+    modified: 1697734584726
+    created: 1697734088465
+    url: "{{ _.API_URI }}/graphql"
+    name: Graphql Mutation
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation MyMutation {\n  newUser(name: \"test\", userId:
+        \"123\") {\n    id\n  }\n}\n","operationName":"MyMutation"}'
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_ba2e66b6707249b5aefd2a404109646b
+      - name: Content-Type
+        value: application/json
+        id: pair_0cf6304560ab4b728eef34c056f5f7f4
+      - id: pair_dc4754ee519345d4a8d2893fa51a0292
+        name: Authorization
+        value: Bearer 123
+        description: ""
+        disabled: true
+    authentication: {}
+    metaSortKey: -1697734088465
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_scratchpad
+    parentId: null
+    modified: 1697733524833
+    created: 1697733524833
+    name: Scratch Pad
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: ws-req_f103a27b38534e6183d65669b7df777e
+    parentId: wrk_scratchpad
+    modified: 1697734600634
+    created: 1697733991569
+    name: Graphql subscribe
+    url: "{{ _.API_WEBSOCKET_URI }}/subscription"
+    metaSortKey: -1697733991569
+    headers:
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_d1cf8b4932574c79b7c1fc407641fc9f
+      - id: pair_a9516e5ef56b46fdb628e750c2abd718
+        name: Sec-WebSocket-Protocol
+        value: graphql-ws
+        description: ""
+      - id: pair_9986daf1e03c4fc28d42ecc15e6fbaa3
+        name: Authorization
+        value: Bearer 123
+        description: ""
+        disabled: true
+    authentication: {}
+    parameters:
+      - id: pair_94ff05ed55834166bca0bd47a3e91d84
+        name: payload
+        value: e30=
+        description: ""
+      - id: pair_2088168d6dfa438eacba89655c01c753
+        name: header
+        value: eyJob3N0IjoiMmI0YXkyZHBwamhiNWhhNXluNmVyb2M0emkuYXBwc3luYy1hcGkuZXUtd2VzdC0xLmFtYXpvbmF3cy5jb20iLCJBdXRob3JpemF0aW9uIj
+        description: ""
+    settingEncodeUrl: true
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingFollowRedirects: global
+    description: ""
+    _type: websocket_request
+  - _id: req_b47993563d714d5db8224896359a2946
+    parentId: wrk_scratchpad
+    modified: 1697734656505
+    created: 1697733698347
+    url: "{{ _.API_URI }}/graphql"
+    name: Graphql Query
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"query MyQuery {\n    ping\n}","operationName":"MyQuery"}'
+    parameters:
+      - id: pair_860dbcbf2b344f2cb12fb2cedd24ba38
+        name: ""
+        value: ""
+        description: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_f807918f83f644c687f11cb54cf3651f
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_6e3ce85638d04023bf3850ce741bf4a7
+      - id: pair_3daa2062fd294f9db30da254ba8d01fa
+        name: Authorization
+        value: Bearer test
+        description: ""
+        disabled: true
+    authentication: {}
+    metaSortKey: -1697733698347
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    parentId: wrk_scratchpad
+    modified: 1697733542646
+    created: 1697733542646
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1697733542646
+    _type: environment
+  - _id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    parentId: wrk_scratchpad
+    modified: 1697733542691
+    created: 1697733542691
+    name: Default Jar
+    cookies:
+      - id: 6eae0d6d-6e04-4c1b-b12a-e646dea1c4e0
+        key: access_token
+        value: "123323"
+        domain: d2069iq15so07o.cloudfront.net
+        expires: 2038-01-19T03:14:07.000Z
+        path: /
+        secure: false
+        httpOnly: false
+    _type: cookie_jar
+  - _id: env_4455bdae26614f3abc7e513a3b5d5359
+    parentId: env_99d30891da4bdcebc63947a8fc17f076de878684
+    modified: 1697734481049
+    created: 1697734400851
+    name: Cloudfront-appsync-reverse-proxy
+    data:
+      API_URI: https://xxx.cloudfront.net
+      API_WEBSOCKET_URI: wss://xxxx.cloudfront.net
+    dataPropertyOrder:
+      "&":
+        - API_URI
+        - API_WEBSOCKET_URI
+    color: null
+    isPrivate: true
+    metaSortKey: 1697734400851
+    _type: environment
+  - _id: ws-payload_9682d474e65e4bc3a51613b175da20ae
+    parentId: ws-req_f103a27b38534e6183d65669b7df777e
+    modified: 1697734586398
+    created: 1697734013714
+    name: New Payload
+    value: >-
+      {
+        "id": "5",
+        "payload": {
+          "data": "{\"query\": \"subscription newUser {\\n newUser {\\n name \\n id \\n }}\"}",
+            "extensions": {
+              "authorization": {
+                "host": "2b4ay2dppjhb5ha.appsync-api.eu-west-1.amazonaws.com",
+                "Authorization": "Bearer test"
+               }
+            }
+        },
+        "type": "start"
+      }
+    mode: application/json
+    _type: websocket_payload
